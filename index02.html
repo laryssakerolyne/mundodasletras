@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Fotos com Animação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Galeria de Fotos</h1>
+    <div class="gallery">
+        <div class="slide">
+            <img src="bebe.jpg" alt="Foto 1">
+        </div>
+        <div class="slide">
+            <img src="maria.jpg" alt="Foto 2">
+        </div>
+        <div class="slide">
+            <img src="princesa.jpg" alt="Foto 3">
+        </div>
+        <!-- Adicione mais fotos aqui -->
+    </div>
+    <button id="nextBtn">Próximo</button>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+            });
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        });
+
+        // Mostrar o primeiro slide
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
