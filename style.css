@@ -70,3 +70,77 @@ h1 {
 #nextBtn:hover {
     background-color: #0056b3;
 }
+
+/* Reset básico para garantir consistência */
+body, h1 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centraliza o título e o conteúdo */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    margin: 20px;
+    color: #333;
+}
+
+/* Estilo das letras */
+.letters {
+    display: flex;
+    gap: 10px;
+}
+
+.letter {
+    font-size: 24px;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.letter:hover {
+    background-color: #e0e0e0;
+}
+
+/* Estilo dos balões */
+.balloon-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.balloon {
+    position: absolute;
+    width: 50px;
+    height: 70px;
+    background-color: #ff5722;
+    border-radius: 50% 50% 0 0;
+    border: 2px solid #d84315;
+    text-align: center;
+    color: #fff;
+    line-height: 70px;
+    font-size: 18px;
+    pointer-events: auto;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.balloon.show {
+    opacity: 1;
+    transform: translateY(-100px);
+}
