@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caça às Letras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #letters {
+            margin: 20px 0;
+        }
+        .letter {
+            display: inline-block;
+            margin: 5px;
+            padding: 20px;
+            font-size: 24px;
+            border: 2px solid #201c1c;
+            cursor: pointer;
+            background-color: #d8ebf1;
+        }
+        .found {
+            background-color: #b0c8e2;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jogo de Caça às Letras</h1>
+    <p>Clique na letra correta:</p>
+    <p id="targetLetter"></p>
+    
+    <div id="letters"></div>
+
+    <script>
+        const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+        let targetLetter = '';
+
+        function getRandomLetter() {
+            return alphabet[Math.floor(Math.random() * alphabet.length)];
+        }
+
+        function setupGame() {
+            targetLetter = getRandomLetter();
+            document.getElementById('targetLetter').textContent = `Encontre a letra: ${targetLetter}`;
+
+            const lettersContainer = document.getElementById('letters');
+            lettersContainer.innerHTML = '';
+            
+            alphabet.forEach(letter => {
+                const letterDiv = document.createElement('div');
+                letterDiv.textContent = letter;
+                letterDiv.className = 'letter';
+                letterDiv.onclick = () => checkLetter(letter);
+                lettersContainer.appendChild(letterDiv);
+            });
+        }
+
+        function checkLetter(letter) {
+            if (letter === targetLetter) {
+                alert('Parabéns! Você encontrou a letra correta!');
+                document.querySelectorAll('.letter').forEach(el => el.classList.add('found'));
+            } else {
+                alert('Tente novamente.');
+            }
+            setupGame(); // Setup a new round
+        }
+
+        // Start the game
+        setupGame();
+    </script>
+</body>
+</html>
