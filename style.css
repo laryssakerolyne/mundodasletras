@@ -71,6 +71,13 @@ h1 {
     background-color: #0056b3;
 }
 
+
+
+
+
+
+
+
 /* Reset básico para garantir consistência */
 body, h1 {
     margin: 0;
@@ -143,4 +150,19 @@ h1 {
 .balloon.show {
     opacity: 1;
     transform: translateY(-100px);
+}
+
+.error-balloon {
+    background-color: #a70f04;
+    border-color: #16b816;
+}
+
+.error-balloon::after {
+    content: "!";
+    display: block;
+    font-size: 24px;
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
