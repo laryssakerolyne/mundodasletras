@@ -33,14 +33,14 @@ h1 {
 .slide {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 800%;
     transition: opacity 1s ease-in-out;
     opacity: 0;
 }
 
 /* Exibe o slide ativo */
 .slide img {
-    width: 100%;
+    width: 800%;
     height: auto;
     display: block;
 }
