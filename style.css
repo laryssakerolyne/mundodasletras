@@ -176,3 +176,63 @@ h1 {
 }
 
 
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    margin: 0 0 20px;
+}
+
+.word-display {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 1.2em;
+    color: red;
+    margin-bottom: 20px;
+}
+
+input {
+    font-size: 1.2em;
+    padding: 5px;
+    width: 50px;
+    text-align: center;
+}
+
+button {
+    font-size: 1.2em;
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+
+.hangman-image {
+    margin: 20px 0;
+}
+
+#hangmanImageDisplay {
+    width: 200px;
+}
+
+.attempts {
+    font-size: 1.2em;
+    margin-top: 20px;
+}

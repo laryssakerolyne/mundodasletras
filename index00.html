@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Jogo da Forca</h1>
+        <div id="wordDisplay" class="word-display">_ _ _ _ _</div>
+        <div id="message" class="message"></div>
+        <input type="text" id="letterInput" maxlength="1" placeholder="Digite uma letra">
+        <button id="guessButton">Adivinhar</button>
+        <div id="hangmanImage" class="hangman-image">
+            <img src="bebe.png" alt="Forca" id="hangmanImageDisplay">
+        </div>
+        <div id="attempts" class="attempts">Tentativas restantes: 6</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
