@@ -18,30 +18,15 @@
         <div id="word-container" class="drop-container">
             <p>Arraste as letras aqui para formar uma palavra.</p>
         </div>
+        <button id="clear-word" class="button">Limpar Palavra</button>
+        <button id="save-word" class="button">Salvar Palavra</button>
     </div>
 
-    <script>
-        const letters = document.querySelectorAll('.letter');
-        const wordContainer = document.getElementById('word-container');
+    <div id="saved-words" class="saved-words">
+        <h2>Palavras Salvas</h2>
+        <ul id="word-list"></ul>
+    </div>
 
-        letters.forEach(letter => {
-            letter.addEventListener('dragstart', (e) => {
-                e.dataTransfer.setData('text/plain', e.target.textContent);
-            });
-        });
-
-        wordContainer.addEventListener('dragover', (e) => {
-            e.preventDefault();
-        });
-
-        wordContainer.addEventListener('drop', (e) => {
-            e.preventDefault();
-            const letter = e.dataTransfer.getData('text/plain');
-            const span = document.createElement('span');
-            span.textContent = letter;
-            span.className = 'letter';
-            wordContainer.appendChild(span);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

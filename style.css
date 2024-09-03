@@ -239,6 +239,10 @@ button {
 
 
 
+
+
+
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -276,8 +280,50 @@ body {
     min-height: 100px;
     background-color: #fff;
     margin-top: 20px;
+    position: relative;
 }
 
 .drop-container p {
     margin: 0;
+}
+
+.button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.saved-words {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 200px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.saved-words h2 {
+    margin-top: 0;
+}
+
+#word-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#word-list li {
+    background-color: #f0f0f0;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 3px;
 }
