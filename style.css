@@ -78,30 +78,27 @@ h1 {
 
 
 
-
 /* Remove as margens e o padding padrão */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
+    overflow: hidden; /* Garante que não haverá barras de rolagem */
 }
 
-/* Faz a imagem ocupar toda a tela */
-.fullscreen-image {
+/* Estilo para o contêiner com a imagem de fundo */
+.background-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* Garante que não haverá barras de rolagem */
+    background-image: url('sua-imagem.jpg'); /* Caminho para a sua imagem */
+    background-size: cover; /* Faz com que a imagem cubra a área, mantendo a proporção */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    z-index: -1; /* Garante que o conteúdo da página apareça sobre a imagem de fundo */
 }
-
-.fullscreen-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Faz com que a imagem cubra a área, mantendo a proporção */
-}
-
 
 
