@@ -97,3 +97,30 @@ p {
 }
 
 
+
+
+/* Define o fundo colorido da página */
+body {
+    background-color: #f0f8ff; /* Você pode mudar a cor aqui */
+    font-family: Arial, sans-serif; /* Define uma fonte padrão */
+    color: #333; /* Define a cor do texto */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Faz a altura do body ser igual à altura da tela */
+}
+
+/* Define o estilo do conteúdo centralizado */
+.container {
+    text-align: center;
+    background-color: #ffffff; /* Cor de fundo do container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
