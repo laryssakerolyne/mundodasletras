@@ -3,82 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caça às Letras</title>
-    <title>Página com Fundo Colorido</title>
-    
-
-</div>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        #letters {
-            margin: 20px 0;
-        }
-        .letter {
-            display: inline-block;
-            margin: 5px;
-            padding: 20px;
-            font-size: 24px;
-            border: 2px solid #201c1c;
-            cursor: pointer;
-            background-color: #d8ebf1;
-        }
-        .found {
-            background-color: #b0c8e2;
-            text-decoration: line-through;
-        }
-    </style>
+    <title>Galeria de Fotos com Animação</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>𝕵𝖔𝖌𝖔 𝖉𝖊 𝕮𝖆𝖈̧𝖆 𝖆̀𝖘 𝕷𝖊𝖙𝖗𝖆𝖘</h1>
-    <p>𝙲𝚕𝚒𝚚𝚞𝚎 𝚗𝚊 𝚕𝚎𝚝𝚛𝚊 𝚌𝚘𝚛𝚛𝚎𝚝𝚊:</p>
-    <p id="targetLetter"></p>
+    <h1>Letras</h1>
+    <div class="gallery">
+        <div class="slide">
+            <img src="a.png" alt="Foto 1">
+        </div>
+        <div class="slide">
+            <img src="bb.png" alt="Foto 2">
+        </div>
+        <div class="slide">
+            <img src="cc.png" alt="Foto 3">
+        </div>
+        <div class="slide">
+            <img src="dd.png" alt="Foto 4">
+        </div>
+        <div class="slide">
+            <img src="ee.png" alt="Foto 5">
+        </div>
+        <div class="slide">
+            <img src="ff.png" alt="Foto 6">
+        </div>
+        <div class="slide">
+            <img src="gg.png" alt="Foto 7">
+        </div>
+        <div class="slide">
+            <img src="hh.png" alt="Foto 8">
+        </div>
+        <div class="slide">
+            <img src="ii.png" alt="Foto 9">
+        </div>
+        <div class="slide">
+            <img src="jj.png" alt="Foto 10">
+        </div>
+        <div class="slide">
+            <img src="kk.png" alt="Foto 11">
+        </div>
+        <div class="slide">
+            <img src="ll.png" alt="Foto 12">
+        </div>
+        <div class="slide">
+            <img src="mm.png" alt="Foto 13">
+        </div>
+        <div class="slide">
+            <img src="nn.png" alt="Foto 14">
+        </div>
+        <div class="slide">
+            <img src="oo.png" alt="Foto 15">
+
+        </div> <div class="slide">
+            <img src="pp.png" alt="Foto 16">
+        </div>
+        <div class="slide">
+            <img src="qq.png" alt="Foto 17">
+        </div>
+        <div class="slide">
+            <img src="ff.png" alt="Foto 18">
+        </div>
+        <div class="slide">
+            <img src="qq.png" alt="Foto 19">
+        </div>
+        <div class="slide">
+            <img src="rr.png" alt="Foto 20">
+        </div>
+        <div class="slide">
+            <img src="ss.png" alt="Foto 21">
+        </div>
+        <div class="slide">
+            <img src="tt.png" alt="Foto 22">
+        </div>
+        <div class="slide">
+            <img src="uu.png" alt="Foto 23">
+        </div>
+        <div class="slide">
+            <img src="vv.png" alt="Foto 24">
+        </div>
+        <div class="slide">
+            <img src="ww.png" alt="Foto 25">
+        </div>
+        <div class="slide">
+            <img src="xx.png" alt="Foto 26">
+        </div>
+        <div class="slide">
+            <img src="yy.png" alt="Foto 27">
+        </div>
+        <div class="slide">
+            <img src="zz.png" alt="Foto 28">
+        </div>
+
+        <!-- Adicione mais fotos aqui -->
+    </div>
+    <button id="nextBtn">Próximo</button>
     
-    <div id="letters"></div>
+    <li><a href="index1.html">Proximo</a></li>
+
+    
+    
+
 
     <script>
-        const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-        let targetLetter = '';
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
 
-        function getRandomLetter() {
-            return alphabet[Math.floor(Math.random() * alphabet.length)];
-        }
-
-        function setupGame() {
-            targetLetter = getRandomLetter();
-            document.getElementById('targetLetter').textContent = `Encontre a letra: ${targetLetter}`;
-
-            const lettersContainer = document.getElementById('letters');
-            lettersContainer.innerHTML = '';
-            
-            alphabet.forEach(letter => {
-                const letterDiv = document.createElement('div');
-                letterDiv.textContent = letter;
-                letterDiv.className = 'letter';
-                letterDiv.onclick = () => checkLetter(letter);
-                lettersContainer.appendChild(letterDiv);
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
             });
         }
 
-        function checkLetter(letter) {
-            if (letter === targetLetter) {
-                alert('Parabéns! Você encontrou a letra correta!');
-                document.querySelectorAll('.letter').forEach(el => el.classList.add('found'));
-            } else {
-                alert('Tente novamente.');
-            }
-            setupGame(); // Setup a new round
-        }
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        });
 
-        // Start the game
-        setupGame();
+        // Mostrar o primeiro slide
+        showSlide(currentSlide);
     </script>
 
-         <li><a href="index02.html">Proximo</a></li>
+</head>
+<body>
 
-         
+
 </body>
 </html>
